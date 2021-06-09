@@ -9,7 +9,11 @@ FROM `ospiti`,
 WHERE YEAR(`date_of_birth`) > "1988";
 
 -- 3. Seleziona tutti gli ospiti che hanno almeno 20 anni (al momento dell'esecuzione della query)
-SELECT `date_of_birth`
-FROM `ospiti`
+SELECT `date_of_birth`,
+FROM `ospiti`,
 WHERE (year(CURRENT_TIMESTAMP) - year(date_of_birth)) >= 20;
 
+-- 4. Seleziona tutti gli ospiti il cui nome inizia con la D
+SELECT *,
+FROM `ospiti`,
+WHERE `name` LIKE 'D%';
